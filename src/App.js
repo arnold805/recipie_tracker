@@ -3,6 +3,7 @@ import "./App.css";
 import Appbar from "./components/Appbar";
 import RecipeCard from "./components/RecipeCard";
 import Search from "./components/Search";
+import AddRecipe from "./components/AddRecipe"
 import MediaCard from "./components/MediaCard";
 import { Button } from "@mui/material";
 
@@ -16,8 +17,8 @@ function App() {
       // debugger
         return (
           recipe.name.toLowerCase().includes(e.target.value.toLowerCase()) 
-          // ||
-          // recipe.category.toLowerCase().includes(e.target.value.toLowerCase())
+          ||
+          recipe.link.toLowerCase().includes(e.target.value.toLowerCase())
         );
       });
       setFilteredRecipes(filteredRec);
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="App">
       <Appbar />
+      <AddRecipe/>
       <Search handleRecSearch={handleRecSearch} />
       {/* <MediaCard /> */}
       {filteredRecipes.map((recipe) => {
