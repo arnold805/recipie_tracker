@@ -14,7 +14,7 @@ function RecipeCard({recipe}) {
               {recipe.name}
             </h3>
             <h5 className="recipe-link">
-              <a href ={recipe.link}>
+              <a href ={recipe.link} target="_blank">
               {recipe.link}
               </a>
             </h5>
