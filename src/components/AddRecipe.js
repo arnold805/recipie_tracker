@@ -2,7 +2,7 @@ import React, {useState} from "react";
 // import './AddRecipe.css'
 // import './Form.css'
 
-function SellCar() {
+function AddRecipe() {
     const [formData, setFormData] = useState({
         name: "",
         link: "",
@@ -122,4 +122,4 @@ function SellCar() {
       );
     }
 
-export default SellCar;
+export default AddRecipe;

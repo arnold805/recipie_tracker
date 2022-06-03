@@ -1,10 +1,10 @@
-import React from 'react'
+import * as ReactDOM from 'react-dom';
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import { Button } from "@mui/material";
+import App from '../App';
 
-function RecipeCard({recipe}) {
-
-  console.log(recipe)
-
+function RecipeCard({recipe, delete_recipe}) {
 
     return (
         <div>
@@ -20,6 +20,7 @@ function RecipeCard({recipe}) {
             </h5>
             <img src={recipe.image_url} alt={recipe.name} style={{border: "5px solid #89CFF0", "width":"200px", "height": "200px"}}/>
           </div>
+          <Button onClick={() => delete_recipe(recipe)} variant="contained">Remove</Button>
         </div>
       </div>
     )

@@ -39,6 +39,16 @@ function App() {
       .then((data) => setRecipes(data));
   }, []);
 
+
+  const delete_recipe = function(recipe) {
+    console.log(recipe)
+    fetch(`http://localhost:9292/recipes/${recipe.id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(setRecipes(recipes.filter((item) => item.name !== recipe.name)));
+      }
+
   return (
     <div className="App">
       <Appbar />
@@ -46,7 +56,7 @@ function App() {
       <Search handleRecSearch={handleRecSearch} />
       {/* <MediaCard /> */}
       {filteredRecipes.map((recipe) => {
-        return <RecipeCard recipe={recipe} />;
+        return <RecipeCard delete_recipe={delete_recipe} recipe={recipe}  />;
       })}
     </div>
   );
