@@ -3,7 +3,6 @@ import "./App.css";
 import Appbar from "./components/Appbar";
 import RecipeCard from "./components/RecipeCard";
 import Search from "./components/Search";
-import MediaCard from "./components/MediaCard";
 import { Button } from "@mui/material";
 
 function App() {
@@ -42,7 +41,6 @@ function App() {
     <div className="App">
       <Appbar />
       <Search handleRecSearch={handleRecSearch} />
-      {/* <MediaCard /> */}
       {filteredRecipes.map((recipe) => {
         return <RecipeCard recipe={recipe} />;
       })}

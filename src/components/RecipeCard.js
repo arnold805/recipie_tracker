@@ -8,7 +8,12 @@ function RecipeCard({recipe, delete_recipe}) {
 
     return (
         <div>
-        <div className="recipe" >
+        <div className="recipe" 
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
           <div className="recipe-body" >
             <h3 className="recipe-name">
               {recipe.name}

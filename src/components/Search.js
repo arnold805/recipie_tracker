@@ -4,7 +4,12 @@ function Search({handleRecSearch}) {
 
   
     return (
-        <div className="searchbar">
+        <div className="searchbar"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
           <label htmlFor="search">Search Recipes</label>
           <input
             type="text"

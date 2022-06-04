@@ -10,11 +10,11 @@ import { Button } from "@mui/material";
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
+  const [currentRecipe, setCurrentRecipe] = useState(undefined)
 
   function handleRecSearch(e) {
     if (e.target.value !== undefined) {
       const filteredRec = recipes.filter((recipe) => {
-      // debugger
         return (
           recipe.name.toLowerCase().includes(e.target.value.toLowerCase()) 
           ||
@@ -52,9 +52,8 @@ function App() {
   return (
     <div className="App">
       <Appbar />
-      <AddRecipe/>
+      <AddRecipe recipes={recipes} setFilteredRecipes={setFilteredRecipes} setCurrentRecipe={setCurrentRecipe} setRecipes={setRecipes}/>
       <Search handleRecSearch={handleRecSearch} />
-      {/* <MediaCard /> */}
       {filteredRecipes.map((recipe) => {
         return <RecipeCard delete_recipe={delete_recipe} recipe={recipe}  />;
       })}
