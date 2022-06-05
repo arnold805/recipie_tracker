@@ -1,24 +1,13 @@
 import React from "react";
+import TextField from '@mui/material/TextField';
 
 function Search({handleRecSearch}) {
 
-  
-    return (
-        <div className="searchbar"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}>
-          <label htmlFor="search">Search Recipes</label>
-          <input
-            type="text"
-            id="search"
-            placeholder="Search for a recipe name or category..."
-            onChange={handleRecSearch}
-          />
-        </div>
-    )
+  return (
+    <div className="searchbar" style={{ display: "flex", justifyContent: "center", alignItems: "center",}} >
+      <TextField id="standard-basic" label="search recipes" variant="standard" onChange={handleRecSearch} />
+    </div>
+  )
 }
 
 export default Search;
