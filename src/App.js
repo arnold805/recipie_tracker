@@ -4,9 +4,6 @@ import Appbar from "./components/Appbar";
 import RecipeCard from "./components/RecipeCard";
 import Search from "./components/Search";
 import AddRecipe from "./components/AddRecipe"
-import MediaCard from "./components/MediaCard";
-import { Button } from "@mui/material";
-import Demo from "./components/Demo"
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -54,8 +51,8 @@ function App() {
       <Appbar />
       <AddRecipe recipes={recipes} setFilteredRecipes={setFilteredRecipes} setRecipes={setRecipes}/>
       <Search handleRecSearch={handleRecSearch} />
-      {filteredRecipes.map((recipe) => {
-        return <RecipeCard delete_recipe={delete_recipe} recipe={recipe}  />;
+      {filteredRecipes.map((recipe) => { 
+        return <RecipeCard delete_recipe={delete_recipe} recipe={recipe} />;
       })}
     </div>
   );

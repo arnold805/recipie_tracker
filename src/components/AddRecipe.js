@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 // import './AddRecipe.css'
 // import './Form.css'
-import TextField from '@mui/material/TextField';
-import { alpha, Box, Input } from '@mui/material/styles';
+// import TextField from '@mui/material/TextField';
+import { Button, TextField } from '@mui/material';
+
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 function AddRecipe({setRecipes, recipes}) {
@@ -45,7 +46,7 @@ function AddRecipe({setRecipes, recipes}) {
                     name: "",
                     link: "",
                     image_url: "",
-                    category: "",
+                    category_id: "",
                     errors: {}
                   })
               });
@@ -58,15 +59,11 @@ function AddRecipe({setRecipes, recipes}) {
     return (
         <div className="add-recipe-form-box">
           <h3>Add Recipe</h3>
-          <form className="sell-car-form" onSubmit={handleSubmit}>
-
-            {/* <TextField formData={formData} setFormData={setFormData} setRecipes={setRecipes} recipes={recipes} id="standard-basic" label="recipe name" variant="standard" value="{TextField}" onChange={handleChange} /> */}
-            <input type="text" name="name" placeholder="recipe name" value={formData.name} onChange={handleChange} />
-            <input type="text" name="link" placeholder="link" value={formData.link} onChange={handleChange}/>
-            <input type="url" name="image_url"  placeholder="image" value={formData.image_url} onChange={handleChange}/>
-            <input type="text" name="category_id"  placeholder="category" value={formData.category} onChange={handleChange}/>
-            <input type="submit" name="add-recipe-listing-btn" value="Add Recipe"/>
-          </form>
+            <TextField id="standard-basic" type="text" name="name" label="recipe name" variant="standard" value={formData.name} onChange={handleChange} />
+            <TextField id="standard-basic" type="text" name="link" label="link" variant="standard" value={formData.link} onChange={handleChange} />
+            <TextField id="standard-basic" type="url" name="image_url" label="image url" variant="standard" value={formData.image_url} onChange={handleChange} />
+            <TextField id="standard-basic" type="text" name="category_id" label="category" variant="standard" value={formData.category_id} onChange={handleChange} />
+            <Button onClick={handleSubmit} variant="contained">Add Recipe</Button>
         </div>
       );
     }
